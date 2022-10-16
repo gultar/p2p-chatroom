@@ -6,6 +6,9 @@ const ChatFooter = ({socket}) => {
   const handleSendMessage = (e) => {
     e.preventDefault()
     if(message.trim() && localStorage.getItem("userName")) {
+      //The message will first be sent to the server, then the server will 
+      //spread it to the peers it is connected with, who will display it to their 
+      //user endpoints
     socket.emit("message", 
         {
         text: message, 

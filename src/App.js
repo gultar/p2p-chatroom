@@ -3,8 +3,10 @@ import Home from './components/Home.js';
 import ChatPage from './components/ChatPage.js';
 import socketIO from 'socket.io-client'
 
+
+const socketPORT = 3333
 //To be made local only --- set in window object for testing purposes
-let socket = socketIO.connect(`http://localhost:3333`, {cors:'*'});
+let socket = socketIO.connect(`http://localhost:${socketPORT}`, {cors:'*'});
 
 function App() {
   return (
